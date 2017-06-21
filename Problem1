@@ -1,0 +1,25 @@
+/*
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Find the sum of all the multiples of 3 or 5 below 1000.
+*/
+
+Declare
+  answer number(10) := 0;
+Begin 
+
+  For i In 1..999
+  Loop
+    -- determine if number is a multiple of 3 or 5
+    If (Mod(i , 3) = 0) Or (Mod(i,5) = 0)
+    Then
+      answer := answer + i;
+    End If;
+  End Loop;
+  
+  DBMS_OUTPUT.PUT_LINE(answer); 
+
+End;
+/
+
+-- Returns 233168
